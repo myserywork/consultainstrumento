@@ -16,6 +16,7 @@ router.start(PORT).then(() => {
     logger.error(error);
 });
 
+
 router.getRouter().get('/consultarInstrumento', consultarInstrumento);
 router.getRouter().post('/consultarEntidade', consultarEntidade);
 

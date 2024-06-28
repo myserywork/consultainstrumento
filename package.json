@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node index.js"
+    "start": "pm2 start --no-daemon --interpreter babel-node index.js"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +30,7 @@
     "nodemon": "^3.1.4",
     "openai": "^4.17.3",
     "ora": "^7.0.1",
+    "pm2": "^5.4.1",
     "selenium-webdriver": "^4.22.0"
   }
 }
