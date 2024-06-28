@@ -79,6 +79,7 @@ class TransfereGovAutomator {
         const chrome = await import('selenium-webdriver/chrome.js');
         let options = new chrome.Options();
         options.addArguments(
+            "--headless",
             "--start-maximized", 
             "--disable-extensions", 
             "--disable-gpu", 

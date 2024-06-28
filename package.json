@@ -24,8 +24,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.19.2",
+    "figlet": "^1.7.0",
+    "forever": "^4.0.3",
     "mongoose": "^8.0.0",
-    "nodemon": "^3.0.1",
+    "nodemon": "^3.1.4",
     "openai": "^4.17.3",
     "ora": "^7.0.1",
     "selenium-webdriver": "^4.22.0"

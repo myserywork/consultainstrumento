@@ -37,6 +37,8 @@ async function consultarInstrumento(req, res) {
         await transfereGov.seleniumHelper.navigateTo(finalUrl);
         await showMessage(`Navegou para o link final: ${finalUrl}`, spinner);
 
+   
+
         await extrairDadosDaListagem(transfereGov, id, spinner);
 
         res.status(200).json({ status: transfereGov.getStatus(), resultados: transfereGov.results, erros: transfereGov.getErrors() });
@@ -131,7 +133,7 @@ async function extrairDadosDaListagem(transfereGov, numeroConvenio, spinner) {
                 continue;
             }
 
-            const instrumento = new InstrumentoModel({
+           const instrumento = {
                 numeroConvenio,
                 numero,
                 processoExecucao,
@@ -144,9 +146,9 @@ async function extrairDadosDaListagem(transfereGov, numeroConvenio, spinner) {
                 dataEnvioAceite,
                 usuario: transfereGov.isTrainingEnvironment ? process.env.USUARIO_TRANSFERE_GOV_HOMOLOG : process.env.USUARIO_TRANSFERE_GOV_PROD,
                 environment: transfereGov.isTrainingEnvironment ? 'homolog' : 'prod'
-            });
+            }
 
-            await instrumento.save();
+        
             resultados.push({
                 numero,
                 processoExecucao,

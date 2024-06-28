@@ -12,6 +12,7 @@ import { InstrumentoSchema } from './core/models/Instrumento.js';
 const loggerTemp = new Logger();
 
 class DIContainer {
+
     constructor() {
         this.dependencies = new Map();
     }
@@ -25,9 +26,9 @@ class DIContainer {
         if (!this.dependencies.has(name)) {
             throw new Error(`Dependency '${name}' not registered.`);
         }
-
         return this.dependencies.get(name);
     }
+    
 }
 
 const container = new DIContainer();
